@@ -1,119 +1,75 @@
-Indian Railways Library Assignment
-This Assignment implements a C++ library for Indian Railways that models stations, lines, and platforms. The system allows for the dynamic handling of train stoppages, ensuring that platforms can accommodate trains based on their type (regular or through trains).
+Indian Railways Library
+This library is designed to manage the functionality of the Indian Railways system, specifically handling stations, lines, and platforms.
+Assignment Details
+This assignment carries a total of 60 marks, with the following components:
 
-Overview
-The library includes:
+Class Design and Implementation (40 marks):
 
-Stations: Represented with either an integer or string ID.
-Platforms: Each station has platforms, which have time slots for train stoppages. Regular trains can stop every 30 minutes, while through trains can stop every 10 minutes.
-Lines: A line consists of multiple stations.
-The project follows object-oriented principles, including:
+The library must have classes for (i) stations, (ii) lines, and (iii) platforms.
+Each station is associated with multiple lines, corresponding to a single platform.
+A single platform can only accommodate a train stoppage once every 30 minutes, whereas a through train can be accommodated once every 10 minutes.
+The station's ID can be either a string or an integer, depending on the user program's preference.
+The principles of polymorphism and data hiding must be followed in the library.
+Incorrect information coming from the user program must be rejected.
 
-Polymorphism: Different station types (integer vs string ID) handled polymorphically.
-Data Hiding: Proper encapsulation of data.
-Exception Handling: Ensures that incorrect data is not accepted.
-Requirements
-C++17 or later.
-g++ compiler.
-make for building the project.
-Project Structure
-makefile
-Copy code
-/RailwayLibraryProject
-├── Makefile           # Makefile for building the project (static & shared libraries)
-├── README.md          # This readme file
-├               # C++ source files
-│── main.cpp
-│── station.cpp
-│── platform.cpp
-│── line.cpp
-├── include/           # Header files
-│── station.hpp
-│── platform.hpp
-│── line.hpp
-├── obj/               # Object files will be placed here
-├── bin/               # Executables will be placed here
-├── lib/               # Compiled libraries will be placed here
-└── .gitignore         # Ignored files for version control
-Building the Project
-1. Clone the repository:
-bash
-Copy code
-git clone https://github.com/KianRaj
-cd Indian-Railways-Library
-2. Build the project using the provided Makefile:
-To build everything (static and shared libraries, debug and optimized versions):
-bash
-Copy code
-make
-To build the debug version only:
-bash
-Copy code
-make debug
-To build the optimized version only:
-bash
-Copy code
-make optimized
-To clean up object files, libraries, and executables:
-bash
-Copy code
-make clean
-Output:
-The Makefile will generate:
-libRailwayLibrary.a: The static library.
-libRailwayLibrary.so: The shared library.
-main-debug: The debug version of the test program.
-main-optimized: The optimized version of the test program.
-Executables will be placed in the bin/ directory.
-Usage
-Test Program:
-Once the project is built, you can run the test program:
 
-For Debug Version:
+Test User Program (20 marks):
 
-bash
-Copy code
-./bin/main-debug
-For Optimized Version:
+Write a test user program to verify the functionality of the library.
+The test program should demonstrate that both correct data is accepted and incorrect data is rejected.
+Any data structure from the C++ library can be used.
 
-bash
-Copy code
-./bin/main-optimized
-Menu Options:
-The test program will present a menu with the following options:
 
-Test Platform Time Availability: Enter platform details (ID, arrival time, departure time) and check if a train can stop at a requested time.
-Test Add Station and Platform: Add stations and platforms to the railway system, and check if the station can accommodate the platform.
-Test Exceed Platform Limit: Attempt to add more platforms than allowed to test platform limit functionality.
-Test Invalid Station ID: Test the handling of invalid station IDs.
-Exit: Exit the program.
-Example Input for Platform Availability Test:
-vbnet
-Copy code
-Enter platform ID, arrival time (minutes from midnight), departure time (minutes from midnight), and whether it's through (y/n):
-1 600 630 y
-Enter requested time (in minutes from midnight): 610
-Platform is available for the requested time.
-Input Format
-For the test cases:
-Station ID: Can be either an integer or a string.
-Platform:
-Arrival Time and Departure Time: Specified in minutes from midnight.
-Through Train: (y/n) – Indicating whether the platform is for through trains (if y, 10-minute intervals are allowed; if n, 30-minute intervals are allowed).
-For invalid station IDs, an exception will be thrown if an empty or incorrect ID is entered.
-Libraries and Dependencies
-The project uses standard C++17 features, such as exception handling, polymorphism, and dynamic memory management.
-The Makefile handles the compilation of both static (.a) and shared (.so) libraries, allowing flexibility in how the library is linked with the test program.
-Exception Handling
-The library has been designed to ensure that:
 
-Invalid input (such as incorrect station ID or time format) is rejected.
-Platform limits are enforced correctly.
-Error messages are displayed for incorrect actions, ensuring proper feedback to the user.
-Git Repository
-At least 4 significant commits have been made to track the development of the project.
-GitHub is used for version control. You can find the repository at: https://github.com/KianRaj/MT24012_New_Repo
-Submission
-Submit the code repository on GitHub, ensuring that the TA is made an admin of the repository.
-Submit the code as a zip file on Google Classroom by the due date.
+Library Design
+Class Structure
+
+Station Class:
+
+Handles the information about a specific station, including its ID (string or integer), name, and associated lines.
+Provides methods to add, remove, and retrieve lines associated with the station.
+Ensures that a platform can only accommodate a train stoppage once every 30 minutes or a through train once every 10 minutes.
+
+
+Line Class:
+
+Represents a specific railway line, with a unique ID (string or integer) and a list of stations along the line.
+Provides methods to add, remove, and retrieve stations along the line.
+
+
+Platform Class:
+
+Encapsulates the functionality of a platform associated with a station.
+Tracks the train timings and ensures that the platform rules are followed (30 minutes for stoppage, 10 minutes for through train).
+Provides methods to schedule train arrivals and departures, and to check the availability of the platform.
+
+
+
+The library should follow the principles of polymorphism and data hiding to ensure that the user program cannot directly access or modify the internal implementation details of the classes.
+Test User Program
+The test user program should demonstrate the following scenarios:
+
+Correct Data Acceptance:
+
+Create stations with both string and integer IDs.
+Add lines to the stations and verify the associations.
+Schedule train arrivals and departures on the platforms and ensure that the platform rules are followed.
+
+
+Incorrect Data Rejection:
+
+Attempt to schedule a train arrival or departure that violates the platform rules (e.g., less than 30 minutes for a stoppage, less than 10 minutes for a through train).
+Verify that the library rejects the invalid input and provides appropriate error messages.
+
+
+
+The test program should use a variety of data structures from the C++ library (e.g., std::vector, std::map, std::set) to manage the railway system entities and demonstrate the library's functionality.
+Submission Instructions
+
+Ensure that your code follows the design requirements and includes the necessary classes, methods, and error handling.
+Create a README file (this document) that provides a clear and detailed overview of the assignment, the library design, and the test user program.
+Submit your code, including the library implementation and the test user program, along with the README file.
+
+Good luck with your assignment!
+
 
