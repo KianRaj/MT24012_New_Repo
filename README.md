@@ -22,15 +22,15 @@ Copy code
 /RailwayLibraryProject
 ├── Makefile           # Makefile for building the project (static & shared libraries)
 ├── README.md          # This readme file
-├── src/               # C++ source files
-│   ├── main.cpp
-│   ├── station.cpp
-│   ├── platform.cpp
-│   └── line.cpp
+├               # C++ source files
+│── main.cpp
+│── station.cpp
+│── platform.cpp
+│── line.cpp
 ├── include/           # Header files
-│   ├── station.hpp
-│   ├── platform.hpp
-│   └── line.hpp
+│── station.hpp
+│── platform.hpp
+│── line.hpp
 ├── obj/               # Object files will be placed here
 ├── bin/               # Executables will be placed here
 ├── lib/               # Compiled libraries will be placed here
@@ -39,7 +39,7 @@ Building the Project
 1. Clone the repository:
 bash
 Copy code
-git clone https://github.com/your-username/Indian-Railways-Library.git
+git clone https://github.com/KianRaj
 cd Indian-Railways-Library
 2. Build the project using the provided Makefile:
 To build everything (static and shared libraries, debug and optimized versions):
