@@ -1,5 +1,4 @@
 
-
 #include "Platform.hpp"
 
 Platform::Platform(int number, int arrival, int departure, bool through) 

@@ -16,6 +16,7 @@ public:
     
     bool addPlatform(Platform* platform);
     virtual void displayID() const = 0;  // Pure virtual function
+    
 };
 
 class IntegerStation : public Station {
