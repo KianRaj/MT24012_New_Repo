@@ -70,6 +70,5 @@ Ensure that your code follows the design requirements and includes the necessary
 Create a README file (this document) that provides a clear and detailed overview of the assignment, the library design, and the test user program.
 Submit your code, including the library implementation and the test user program, along with the README file.
 
-Good luck with your assignment!
 
 
