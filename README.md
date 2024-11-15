@@ -112,7 +112,7 @@ Platform limits are enforced correctly.
 Error messages are displayed for incorrect actions, ensuring proper feedback to the user.
 Git Repository
 At least 4 significant commits have been made to track the development of the project.
-GitHub is used for version control. You can find the repository at: https://github.com/your-username/Indian-Railways-Library
+GitHub is used for version control. You can find the repository at: https://github.com/KianRaj/MT24012_New_Repo
 Submission
 Submit the code repository on GitHub, ensuring that the TA is made an admin of the repository.
 Submit the code as a zip file on Google Classroom by the due date.
